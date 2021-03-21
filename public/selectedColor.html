@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    
+    window.onload = () =>{
+
+        if(localStorage["color"]){
+            document.querySelector("#id_h2").innerHTML.style.color += localStorage["color"]
+        }
+    }
+    const selectColor = ()=>{
+        let colorName = document.querySelector("#id_input").value;
+        localStorage.setItem("color",colorName);
+        document.querySelector("#id_h2").style.color = localStorage["color"]
+    }
+    </script>
+</head>
+<body>
+    <h1>enter Your color</h1>
+    <h2 id="id_h2">Your favurite color is  </h2>
+    <input type="text"  id="id_input">
+    <button onclick="selectColor()">Click</button>
+</body>
+</html>
